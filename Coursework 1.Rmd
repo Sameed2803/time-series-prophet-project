@@ -1,0 +1,83 @@
+---
+title: "MTH6139 Time Series" 
+subtitle: "Coursework 1" 
+author: "Muhammad Sameed" 
+date: "Spring term 2026" 
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: spacelab 
+    highlight: tango
+---
+ 
+```{r, echo=FALSE}
+# This code will display the QMUL logo at the top right of the page
+# Do not change this code
+htmltools::img(src = knitr::image_uri("images/QMlogo.png"),
+               alt = 'logo',
+               style = 'position:absolute; top:0; right:0; padding:10px; width:20%;')
+```
+
+
+
+# Section 1: Introduction
+
+This project is about analysing the number of practical driving test passes in the UK from Jan 2019 to Nov 2024.
+
+
+```{r, message=FALSE, warning=FALSE}
+library(prophet)
+
+raw_data = read.csv("car-practical-test-pass-rates-jan-2019-to-nov-2024.csv")
+
+
+```
+
+# Preparing the data 
+Preparing the data for Prophet using the two columns {ds,y} = {Time , Passes}
+```{r}
+test_passes = data.frame(
+    ds = as.Date(raw_data$Time, format = "%d/%m/%Y"),
+    y = as.numeric(gsub(",", "", raw_data$Passed))
+)
+
+```
+The "date" column is called ds and "passed" column is labelled y.
+
+# Plotting the Time Series
+
+```{r}
+plot(test_passes$ds, test_passes$y,
+     type = "l",
+     main = "Number of Practical Driving Passes",
+     xlab = "Date",
+     ylab = "Passes",
+     xaxt = "n")
+
+axis.Date(1,
+          at = seq(min(test_passes$ds),
+                   max(test_passes$ds),
+                   by = "1 year"),
+          format = "%Y")
+```        
+
+From the Time Series we can see a big fall in number of passes around 2020. This could be related to the COVID period, where driving tests were disrupted. There is still a backlog on driving tests availability even after 6 years.However, after this the number of passes have graudally increased.
+          
+# Forecasting With Prophet
+```{r}
+model = prophet(test_passes)
+
+future = make_future_dataframe(model,
+                                periods = 12,
+                                freq = "month")
+
+forecast = predict(model, future)
+plot(model, forecast)
+```
+
+
+
+This predicts the number of future practical driving test passes for the next year.
+
+Looking at the graph, the number of test passes falls drastically around 2020, which may be due to COVID, however ever since then it has gradually grown.
