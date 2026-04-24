@@ -32,5 +32,3 @@ This project analyses and forecasts UK driving test pass trends using time serie
 - analysis/time_series_model.R
 - outputs/forecast_plots.png
 
-## Project Link
-👉 :contentReference[oaicite:0]{index=0}
