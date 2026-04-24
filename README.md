@@ -1,2 +1,36 @@
-# time-series-prophet-project
-Analysis of Number of Practical Test passes in the UK from January 2019  to November 2024 
+# Time Series Forecasting of UK Driving Test Passes
+
+## Overview
+This project analyses and forecasts UK driving test pass trends using time series techniques. The aim was to understand underlying patterns in demand and predict future behaviour.
+
+## Tools Used
+- R (data analysis and modelling)
+- Prophet (time series forecasting)
+- Data visualisation
+
+## Data
+- UK government data on driving test passes
+- Cleaned and prepared for time series analysis
+
+## Methodology
+- Converted data into time series format
+- Applied Prophet model to capture trend and seasonality
+- Analysed patterns including long-term trends and recurring seasonal effects
+
+## Key Analysis
+- Identified overall trend in driving test pass rates
+- Examined seasonal fluctuations (e.g. monthly/annual patterns)
+- Analysed impact of external factors such as COVID-19 disruption
+
+## Key Insights
+- Driving test passes showed clear seasonal patterns over time
+- Significant disruption observed during COVID-19 period
+- Gradual recovery trend identified post-pandemic
+
+## Files
+- data/driving_test_data.csv
+- analysis/time_series_model.R
+- outputs/forecast_plots.png
+
+## Project Link
+👉 :contentReference[oaicite:0]{index=0}
