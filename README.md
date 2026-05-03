@@ -32,3 +32,8 @@ This project analyses and forecasts UK driving test pass trends using time serie
 - [View R Script](Coursework1.R)
 - [View Dataset](car-practical-test-pass-rates-jan-2019-to-nov-2024.csv)
 
+## Summary
+
+This project applies basic time series techniques to analyse and forecast UK driving test pass rates.
+It captures key patterns such as trend and seasonality, demonstrating the practical use of statistical modelling and data analysis on real-world data.
+This was a learning-focused project to build foundational skills in forecasting and interpretation using Python.
