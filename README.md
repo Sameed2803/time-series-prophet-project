@@ -27,9 +27,8 @@ This project analyses and forecasts UK driving test pass trends using time serie
 - Significant disruption observed during COVID-19 period
 - Gradual recovery trend identified post-pandemic
 
-## Files
-- [Full HTML Analysis](index.html)
-- [R Markdown Report](Coursework%201.Rmd)
-- [R Script](Coursework1.R)
-- [Dataset](car-practical-test-pass-rates-jan-2019-to-nov-2024.csv)
+## Project Links
+- [View Full HTML Analysis](https://sameed2803.github.io/time-series-prophet-project/)
+- [View R Script](Coursework1.R)
+- [View Dataset](car-practical-test-pass-rates-jan-2019-to-nov-2024.csv)
 
